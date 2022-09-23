@@ -16,7 +16,11 @@ function Item(props: any) {
     `;
 
     return (
-        <Item>
+        <Item onClick={() => {
+          let temp = [...props.list];
+          temp.splice(temp.indexOf(props.text), 1);
+          props.setList(temp);
+        }}>
             {props.text}
         </Item>
     );
